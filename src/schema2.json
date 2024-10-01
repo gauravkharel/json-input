@@ -1,0 +1,29 @@
+{
+  "title": "Contact Form",
+  "subtitle": "Heading 2",
+  "fields": [
+    {
+      "name": "username",
+      "type": "text",
+      "label": "New Username",
+      "placeholder": "Enter your username",
+      "required": false,
+      "maxLength": 30,
+      "minLength": 5
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "required": false
+    },
+    {
+      "name": "ayo",
+      "type": "text",
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "required": false
+    }
+  ]
+}

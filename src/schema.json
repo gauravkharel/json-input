@@ -1,0 +1,126 @@
+{
+    "title": "Heading 1",
+    "subtitle": "Heading 2",
+    "fields": [
+        {
+            "name": "username",
+            "type": "text",
+            "label": "Username",
+            "placeholder": "Enter your username",
+            "required": true,
+            "maxLength": 30,
+            "minLength": 5,
+            "pattern": "^[a-zA-Z0-9_]+$"
+          },          
+          {
+            "name": "email",
+            "type": "email",
+            "label": "Email",
+            "placeholder": "Enter your email",
+            "required": true,
+            "maxLength": 50
+          },
+          {
+            "name": "password",
+            "type": "password",
+            "label": "Password",
+            "placeholder": "Enter your password",
+            "required": true,
+            "minLength": 8,
+            "maxLength": 20,
+            "pattern": "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%])"
+          },
+          {
+            "name": "message",
+            "type": "textarea",
+            "label": "Message",
+            "placeholder": "Type your message here",
+            "required": true,
+            "rows": 5,
+            "cols": 40,
+            "maxLength": 500
+          },
+          {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "options": [
+              { "label": "United States", "value": "us" },
+              { "label": "Canada", "value": "ca" },
+              { "label": "United Kingdom", "value": "uk" }
+            ],
+            "required": true
+          },
+          {
+            "name": "gender",
+            "type": "radio",
+            "label": "Gender",
+            "options": [
+              { "label": "Male", "value": "male" },
+              { "label": "Female", "value": "female" }
+            ],
+            "required": true
+          },
+          {
+            "name": "subscribe",
+            "type": "checkbox",
+            "label": "Subscribe to Newsletter",
+            "required": false
+          },
+          {
+            "name": "interests",
+            "type": "checkbox-group",
+            "label": "Select Your Interests",
+            "options": [
+              { "label": "Technology", "value": "technology" },
+              { "label": "Art", "value": "art" },
+              { "label": "Music", "value": "music" }
+            ],
+            "required": true
+          },
+          {
+            "name": "age",
+            "type": "number",
+            "label": "Age",
+            "placeholder": "Enter your age",
+            "min": 18,
+            "max": 100,
+            "required": true
+          },
+          {
+            "name": "birthdate",
+            "type": "date",
+            "label": "Birthdate",
+            "required": true
+          },
+          {
+            "name": "resume",
+            "type": "file",
+            "label": "Upload Resume",
+            "accept": ".pdf, .docx",
+            "required": true
+          },
+          {
+            "name": "resume",
+            "type": "file",
+            "label": "Upload Resume",
+            "accept": ".pdf, .docx",
+            "required": true
+          },
+          {
+            "name": "volume",
+            "type": "range",
+            "label": "Volume",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "required": true
+          },
+          {
+            "name": "meeting_time",
+            "type": "time",
+            "label": "Meeting Time",
+            "required": true
+          }                                                                                                               
+    ]
+}
