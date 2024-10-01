@@ -8,7 +8,7 @@ type Inputs = {
 };
 
 export default function Form() {
-  const {json} = useJson()
+  const { json } = useJson()
   const {
     register,
     handleSubmit,
@@ -20,7 +20,7 @@ export default function Form() {
   };
 
   return (
-    <Flex className='flex flex-col bg-pink-100 px-[100px] py-[50px]'>
+    <Flex className='flex flex-col box px-[100px] py-[50px] w-[600px]'>
       <Flex className='flex-col justify-start'>
         <Heading>{json.title}</Heading>
         <Text>{json.subtitle}</Text>
@@ -32,8 +32,7 @@ export default function Form() {
             {errors[field.name] && <span>This field is required</span>}
           </div>
         ))}
-
-        <input className='bg-black px-4 py-2 text-lg rounded-6 font-bold text-white ' type="submit" />
+           <input className='bg-black px-4 py-2 text-lg rounded-6 font-bold text-white ' type="submit" /> 
       </form>
     </Flex>
   );

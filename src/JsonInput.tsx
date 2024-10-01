@@ -22,7 +22,7 @@ const JsonInput: React.FC = () => {
     }
 
     return (
-        <div className="bg-pink-50 px-8 py-10">
+    <div className="box px-8 py-10">
             <form onSubmit={handleSubmit} className="flex flex-col">
                 <textarea
                     name="json"
@@ -35,13 +35,14 @@ const JsonInput: React.FC = () => {
                 />
                 {error && <p className="text-red-500 mt-2">{error}</p>}
                 <div className="flex gap-4 mt-4">
-                    <button type="reset" onClick={() => {
+                    <button className='bt-mine' 
+                    type="reset" onClick={() => {
                         setJsonValue('');
                         setError(null)
                     }}>
                         Reset edits
                     </button>
-                    <button type="submit">Generate form</button>
+                    <button className='bt-mine' type="submit">Generate form</button>
                 </div>
             </form>
 
