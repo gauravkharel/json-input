@@ -13,14 +13,14 @@ const App = () => {
   return (
     <JsonProvider>
       <Grid className='gap-4 pt-3'>
-      <Flex gap="3" className='justify-center'>
-        <HelloGuide />
-        <JsonInput />
-        <Form />
-      </Flex>
-      <Flex className='justify-center'>
-        <SampleDataComponent />
-      </Flex>
+        <Flex gap="3" className='justify-center'>
+          <HelloGuide />
+          <JsonInput />
+          <Form />
+        </Flex>
+        <Flex className='justify-center'>
+          <SampleDataComponent />
+        </Flex>
       </Grid>
     </JsonProvider>
   );

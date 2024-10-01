@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useJson } from './JsonProvider';
+import { Button } from '@radix-ui/themes';
 
 const JsonInput: React.FC = () => {
     const [jsonValue, setJsonValue] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
-    const { setJson } = useJson();
+    const {json, setJson } = useJson();
+
+    useEffect(() => {
+        setJsonValue(JSON.stringify(json, null, 2));
+    }, [json]);
+    
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
@@ -35,14 +41,14 @@ const JsonInput: React.FC = () => {
                 />
                 {error && <p className="text-red-500 mt-2">{error}</p>}
                 <div className="flex gap-4 mt-4">
-                    <button className='bt-mine' 
+                    <Button className='bg-black' 
                     type="reset" onClick={() => {
                         setJsonValue('');
                         setError(null)
                     }}>
                         Reset edits
-                    </button>
-                    <button className='bt-mine' type="submit">Generate form</button>
+                    </Button>
+                    <Button className='bg-black' type="submit">Generate form</Button>
                 </div>
             </form>
 

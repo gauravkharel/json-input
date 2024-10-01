@@ -23,7 +23,7 @@ const renderFields = ({ field, register }: RenderFieldsProps) => {
                 <Flex className="flex-col ">
                     <Label name={field.name}>{field.label}</Label>                    
                     <input
-                        className="px-4 py-2 border-1 rounded-lg font-medium text-gray-500 "
+                        className="px-4 py-2 border-1 rounded-lg font-medium text-gray-500 border-2 border-black"
                         type="text"
                         {...register(field.name, {
                             required: field.required,
