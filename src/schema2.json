@@ -1,29 +1,31 @@
 {
   "title": "Contact Form",
-  "subtitle": "Heading 2",
+  "subtitle": "Please fill out the details below",
   "fields": [
     {
-      "name": "username",
+      "name": "fullName",
       "type": "text",
-      "label": "New Username",
-      "placeholder": "Enter your username",
-      "required": false,
-      "maxLength": 30,
-      "minLength": 5
+      "label": "Full Name",
+      "placeholder": "Enter your full name",
+      "required": true,
+      "maxLength": 50,
+      "minLength": 2
     },
     {
       "name": "email",
-      "type": "text",
+      "type": "email",
       "label": "Email",
       "placeholder": "Enter your email",
-      "required": false
+      "required": true
     },
     {
-      "name": "ayo",
-      "type": "text",
-      "label": "Email",
-      "placeholder": "Enter your email",
-      "required": false
+      "name": "message",
+      "type": "textarea",
+      "label": "Message",
+      "placeholder": "Write your message here",
+      "required": true,
+      "rows": 5,
+      "cols": 40
     }
   ]
 }

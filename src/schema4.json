@@ -1,0 +1,49 @@
+{
+    "title": "Job Application Form",
+    "subtitle": "Apply for the position",
+    "fields": [
+      {
+        "name": "fullName",
+        "type": "text",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "required": true,
+        "maxLength": 50,
+        "minLength": 2
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "label": "Email",
+        "placeholder": "Enter your email",
+        "required": true
+      },
+      {
+        "name": "resume",
+        "type": "file",
+        "label": "Upload Resume",
+        "required": true,
+        "accept": ".pdf,.doc,.docx"
+      },
+      {
+        "name": "yearsOfExperience",
+        "type": "number",
+        "label": "Years of Experience",
+        "placeholder": "Enter your years of experience",
+        "required": true,
+        "min": 0,
+        "max": 50
+      },
+      {
+        "name": "availability",
+        "type": "radio",
+        "label": "Availability",
+        "required": true,
+        "options": [
+          { "label": "Full-time", "value": "full_time" },
+          { "label": "Part-time", "value": "part_time" }
+        ]
+      }
+    ]
+  }
+  

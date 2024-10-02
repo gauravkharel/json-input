@@ -30,23 +30,6 @@ type RadioInput = {
     options: { label: string; value: string }[];
 };
 
-// Checkbox
-type CheckboxInput = {
-    name: string;
-    type: 'checkbox';
-    label: string;
-    required: boolean;
-};
-
-// Checkbox group
-type CheckboxGroupInput = {
-    name: string;
-    type: 'checkbox-group';
-    label: string;
-    required: boolean;
-    options: { label: string; value: string }[];
-};
-
 // Number input
 type NumberInput = {
     name: string;
@@ -100,8 +83,6 @@ export type FormField =
     | TextInput
     | SelectInput
     | RadioInput
-    | CheckboxInput
-    | CheckboxGroupInput
     | NumberInput
     | DateInput
     | FileInput

@@ -12,16 +12,17 @@ type LabelType = {
     name: string
 }
 
-const Label = ({children, name}: LabelType) =>{
+export const Label = ({ children, name }: LabelType) => {
     return <label className="text-xl font-bold text-gray-500" htmlFor={name}>{children}</label>
 }
+
 
 const renderFields = ({ field, register }: RenderFieldsProps) => {
     switch (field.type) {
         case "text":
             return (
                 <Flex className="flex-col ">
-                    <Label name={field.name}>{field.label}</Label>                    
+                    <Label name={field.name}>{field.label}</Label>
                     <input
                         className="px-4 py-2 border-1 rounded-lg font-medium text-gray-500 border-2 border-black"
                         type="text"
@@ -36,8 +37,8 @@ const renderFields = ({ field, register }: RenderFieldsProps) => {
             );
         case "email":
             return (
-                <>
-                    <label>{field.label}</label>
+                <Flex>
+                    <Label name={field.name}>{field.label}</Label>
                     <input
                         type="email"
                         {...register(field.name, {
@@ -45,46 +46,135 @@ const renderFields = ({ field, register }: RenderFieldsProps) => {
                         })}
                         placeholder={field.placeholder}
                     />
-                </>
+                </Flex>
+            );
+        case "number":
+            return (
+                <Flex>
+                    <Label name={field.name}>{field.label}</Label>
+                    <input
+                        type="number"
+                        {...register(field.name, {
+                            required: field.required,
+                            min: field.min,
+                            max: field.max,
+                        })}
+                        placeholder={field.placeholder}
+                    />
+                </Flex>
             );
         case "textarea":
-            return <textarea name={field.name} required={field.required}></textarea>;
+            return (
+                <Flex className="flex-col">
+                    <Label name={field.name}>{field.label}</Label>
+                    <textarea className="px-4 py-2 border-1 rounded-lg font-medium text-gray-500 border-2 border-black" required={field.required}
+                        {...register(field.name,
+
+                            {
+                                required: field.required,
+                            })}
+                        placeholder={field.placeholder}
+                        rows={field.rows}
+                        cols={field.cols}
+                    ></textarea>
+                </Flex>
+            )
+
         case "select":
             return (
-                <>
-
-                </>
+                <Flex className="flex-col">
+                    <Label name={field.name}>{field.label}</Label>
+                    <select
+                        id={field.name}
+                        required={field.required}
+                        {...register(field.name, {
+                            required: field.required,
+                        })}
+                        className="p-2 border border-black rounded-lg"
+                    >
+                        {field.options.map((option) => (
+                            <option key={option.value} value={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
+                    </select>
+                </Flex>
             )
         case "radio":
             return (
-                <>
-                </>
-            )
-        case "checkbox":
-            return (
-                <>
-                </>
-            )
+                <Flex className="flex-col">
+                    <Label name={field.name}>{field.label}</Label>
+                    {field.options.map((option) => (
+                        <label key={option.value} className="flex items-center space-x-2">
+                            <input
+                                type="radio"
+                                value={option.value}
+                                {...register(field.name, {
+                                    required: field.required,
+                                })}
+                                required={field.required}
+                                className="p-2 border border-black rounded-lg"
+                            />
+                            <span>{option.label}</span>
+                        </label>
+                    ))}
+                </Flex>
+            );
+
         case "date":
             return (
-                <>
-                </>
+                <Flex className="flex-col">
+                    <Label name={field.name}>{field.label}</Label>
+                    <input type="date"
+                        {...register(field.name, {
+                            required: field.required
+
+                        })}
+                    >
+                    </input>
+                </Flex>
             )
         case "file":
             return (
-                <>
-                </>
+                <Flex className="flex-col">
+                    <Label name={field.name}>{field.label}</Label>
+                    <input type="file"
+                        {...register(field.name, {
+                            required: field.required
+                        })}
+                        accept={field.accept}
+                    >
+
+                    </input>
+                </Flex>
             )
         case "range":
             return (
-                <>
+                <Flex className="flex-col">
+                    <Label name={field.name}>{field.label}</Label>
+                    <input type='range'
+                        {...register(field.name, {
+                            required: field.required,
+                            min: field.min,
+                            max: field.max,
+                        })}
+                    >
 
-                </>
+                    </input>
+                </Flex>
             )
         case "time":
             return (
-                <>
-                </>
+                <Flex className="flex-col">
+                    <Label name={field.name}>{field.label}</Label>
+                    <input type="time"
+                        {...register(field.name, {
+                            required: field.required
+                        })}
+                    >
+
+                    </input>
+                </Flex>
             )
         default:
             return "Please re-write this in the given sample format."

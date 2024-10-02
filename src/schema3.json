@@ -1,0 +1,41 @@
+{
+    "title": "User Profile Form",
+    "subtitle": "Update your profile details",
+    "fields": [
+      {
+        "name": "username",
+        "type": "text",
+        "label": "Username",
+        "placeholder": "Enter your username",
+        "required": true,
+        "maxLength": 30,
+        "minLength": 5
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "label": "Email",
+        "placeholder": "Enter your email",
+        "required": true
+      },
+      {
+        "name": "gender",
+        "type": "select",
+        "label": "Gender",
+        "required": true,
+        "options": [
+          { "label": "Male", "value": "male" },
+          { "label": "Female", "value": "female" },
+          { "label": "Other", "value": "other" }
+        ]
+      },
+      {
+        "name": "profilePicture",
+        "type": "file",
+        "label": "Profile Picture",
+        "required": false,
+        "accept": "image/*"
+      }
+    ]
+  }
+  
