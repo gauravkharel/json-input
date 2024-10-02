@@ -37,9 +37,10 @@ const renderFields = ({ field, register }: RenderFieldsProps) => {
             );
         case "email":
             return (
-                <Flex>
+                <Flex className="flex-col ">
                     <Label name={field.name}>{field.label}</Label>
                     <input
+                        className="px-4 py-2 border-1 rounded-lg font-medium text-gray-500 border-2 border-black"
                         type="email"
                         {...register(field.name, {
                             required: field.required
@@ -50,9 +51,10 @@ const renderFields = ({ field, register }: RenderFieldsProps) => {
             );
         case "number":
             return (
-                <Flex>
+                <Flex className="flex-col ">
                     <Label name={field.name}>{field.label}</Label>
                     <input
+                        className="px-4 py-2 border-1 rounded-lg font-medium text-gray-500 border-2 border-black"
                         type="number"
                         {...register(field.name, {
                             required: field.required,
@@ -115,7 +117,9 @@ const renderFields = ({ field, register }: RenderFieldsProps) => {
                                 required={field.required}
                                 className="p-2 border border-black rounded-lg"
                             />
-                            <span>{option.label}</span>
+                            <div className="flex flex-col">
+                            <span className="text-xl font-medium text-gray-600 ">{option.label}</span>
+                            </div>
                         </label>
                     ))}
                 </Flex>
